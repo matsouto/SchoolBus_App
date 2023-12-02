@@ -94,6 +94,7 @@ class Fornecedor(PessoaJuridica):
         """
         self.contratos.append(contrato)
 
+
 class Escola(PessoaJuridica):
     def __init__(
         self,
@@ -102,12 +103,12 @@ class Escola(PessoaJuridica):
         cpf_cnpj: str,
         telefone: str,
         num_funcionario: str,
-        nome_fantasia: str = ''
+        nome_fantasia: str = "",
     ):
         super().__init__(nome_oficial, endereco, cpf_cnpj, telefone)
         self.num_funcionario = num_funcionario
         # Tratamento de caso em que o nome_fantasia não é fornecido
-        if (self.nome_fantasia == ''):
+        if self.nome_fantasia == "":
             self.nome_fantasia = self.nome_oficial
 
 
@@ -115,7 +116,6 @@ class Motorista(PessoaFisica):
     def __init__(
         self,
         nome_oficial: str,
-        endereco: Endereco,
         cpf_cnpj: str,
         telefone: str,
         mae: str,
@@ -124,11 +124,13 @@ class Motorista(PessoaFisica):
         data_nascimento: str,
         num_habilitacao: str,
         cat_habilitacao: str,
+        rua: str,
+        numero: str,
+        complemento: str,
         nome_social: str = "",
     ):
         super().__init__(
             nome_oficial,
-            endereco,
             cpf_cnpj,
             telefone,
             mae,
@@ -141,3 +143,4 @@ class Motorista(PessoaFisica):
             self.nome_social = self.nome_oficial
         self.num_habilitacao = num_habilitacao
         self.cat_habilitacao = cat_habilitacao
+        self.endereco = Endereco(rua, numero, complemento)
