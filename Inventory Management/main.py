@@ -1,6 +1,5 @@
 from customtkinter import *
-
-# from CTkTable import CTkTable
+from CTkTable import CTkTable
 from PIL import Image
 
 app = CTk()
@@ -274,8 +273,14 @@ table_data = [
 
 table_frame = CTkScrollableFrame(master=main_view, fg_color="transparent")
 table_frame.pack(expand=True, fill="both", padx=27, pady=21)
-# table = CTkTable(master=table_frame, values=table_data, colors=["#E6E6E6", "#EEEEEE"], header_color="#2A8C55", hover_color="#B4B4B4")
-# table.edit_row(0, text_color="#fff", hover_color="#2A8C55")
-# table.pack(expand=True)
+table = CTkTable(
+    master=table_frame,
+    values=table_data,
+    colors=["#E6E6E6", "#EEEEEE"],
+    header_color="#2A8C55",
+    hover_color="#B4B4B4",
+)
+table.edit_row(0, text_color="#fff", hover_color="#2A8C55")
+table.pack(expand=True)
 
 app.mainloop()
