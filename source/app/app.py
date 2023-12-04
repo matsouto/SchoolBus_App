@@ -1,10 +1,32 @@
 import os
 from textual.app import App, ComposeResult
 from textual.containers import Container, Center
+from textual.screen import Screen
 from textual.widgets import Header, Footer, Button, Static
 
 
+class motoristasScreen(Screen):
+    BINDINGS = [("ESC", "app.pop_screen", "Retornar")]
+
+    def compose(self) -> ComposeResult:
+        yield Header()
+        with Center():
+            yield Container(
+                Static(" Windows ", id="title"),
+                Static("Error"),
+                Static("Press any key to continue [blink]_[/]", id="any-key"),
+            )
+        Footer(),
+
+
 class mainMenu(Static):
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        """Callback dos botões"""
+        if event.button.id == "alunosBtn":
+            pass
+        elif event.button.id == "motoristasBtn":
+            self.app.push_screen(motoristasScreen())
+
     def compose(self) -> ComposeResult:
         with Center():
             yield Button(
@@ -31,6 +53,8 @@ class SchoolBusApp(App):
     """Aplicativo para gestão de ônibus escolar"""
 
     CSS_PATH = "../style/app.tcss"
+    SCREENS = {"mainMenu": mainMenu(), "motoristasScreen": motoristasScreen()}
+    # BINDINGS = [("b", "push_screen('bsod')", "BSOD")]
     BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
 
     def compose(self) -> ComposeResult:
