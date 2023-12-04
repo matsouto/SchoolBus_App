@@ -1,0 +1,14 @@
+mainMenu {
+    height: 100%;
+    layout: vertical;
+    margin: 4 4;
+    background: $panel;
+    color: $text;
+    border: tall $background;
+    padding: 1 1;
+}
+
+Button {
+    width: auto;
+}
+

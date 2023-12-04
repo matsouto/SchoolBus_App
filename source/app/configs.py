@@ -11,9 +11,6 @@ class Configs:
         theme_color: str,
         wResize: bool,
         hResize: bool,
-        logo_path: str = "./assets/logo.png",
-        aluno_path: str = "./assets/aluno.png",
-        motorista_path: str = "./assets/motorista.png",
     ):
         self.screenWidth = screenWidth
         self.screenHeight = screenHeight
@@ -21,6 +18,8 @@ class Configs:
         self.theme_color = theme_color
         self.wResize = wResize
         self.hResize = hResize
-        self.logo_path = logo_path
-        self.aluno_path = aluno_path
-        self.motorista_path = motorista_path
+
+        # Icons an logo image paths
+        self.logo_path = "./assets/logo.png"
+        self.aluno_path = "./assets/aluno.png"
+        self.motorista_path = "./assets/motorista.png"

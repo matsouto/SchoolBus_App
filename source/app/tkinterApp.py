@@ -1,5 +1,7 @@
 import customtkinter
+import tkinter
 from configs import Configs
+from functools import partial
 from PIL import Image
 
 
@@ -32,8 +34,8 @@ class App(customtkinter.CTk):
         self.sidebar_frame = customtkinter.CTkFrame(
             master=self, width=140, corner_radius=10
         )
-        self.sidebar_frame.pack_propagate(0)
-        self.sidebar_frame.pack(fill="y", anchor="w", side="left")
+        # self.sidebar_frame.pack_propagate(0)
+        # self.sidebar_frame.pack(fill="y", anchor="w", side="left")
         self.sidebar_frame.grid(row=0, column=0, padx=10, pady=(10, 10), sticky="nsew")
 
         # Cria o logo na sidebar
@@ -80,19 +82,16 @@ class App(customtkinter.CTk):
             anchor="w",
         ).pack(anchor="center", ipady=5, pady=(16, 0))
 
+        # Cria o "lado direito" da tela
+        self.right_frame = customtkinter.CTkFrame(
+            master=self, width=140, corner_radius=10, fg_color="transparent"
+        )
+        self.right_frame.grid(row=0, column=1, padx=10, pady=(10, 10), sticky="nsew")
+
         # tabview = customtkinter.CTkTabview(master=self)
         # tabview.pack(padx=20, pady=20)
         # tabview.add("tab1")
         # tabview.add("tab2")
-
-        # Cria o botão
-        # buttom = customtkinter.CTkButton(master=self.sidebar_frame, text="button")
-        # # Configura o formato do botão
-        # buttom.grid(row=0, column=1, padx=20, pady=20)
-
-        # buttom2 = customtkinter.CTkButton(master=self, text="button")
-        # # Configura o formato do botão
-        # buttom2.grid(row=1, column=1, padx=20, pady=20)
 
     def button_callback(self):
         print("button pressed")
