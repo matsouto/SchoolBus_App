@@ -14,7 +14,7 @@ class Veiculo:
         capacidade: int,
         tipo: int,
         num_contrato: int,
-        data_incio: str,
+        data_inicio: str,
         data_fim: str,
         valor: float,
     ):
