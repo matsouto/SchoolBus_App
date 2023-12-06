@@ -1,0 +1,25 @@
+{
+    "nome_oficial": "Joao",
+    "cpf_cnpj": "123456789",
+    "telefone": "123456789",
+    "endereco": {
+        "rua": [
+            "Rua teste"
+        ],
+        "numero": [
+            23
+        ],
+        "complemento": [
+            "Complemento teste"
+        ],
+        "bairro": "Brotas"
+    },
+    "mae": "Marcia",
+    "pai": "Pedro",
+    "naturalidade": "Brasileiro",
+    "data_nascimento": "14/03/01",
+    "num_habilitacao": "123456789",
+    "cat_habilitacao": "A",
+    "contratos": [],
+    "tipo": 0
+}

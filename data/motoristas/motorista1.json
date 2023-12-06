@@ -1,0 +1,25 @@
+{
+    "nome_oficial": "Alberto",
+    "cpf_cnpj": "1234568797",
+    "telefone": "951753258456",
+    "endereco": {
+        "rua": [
+            "NomeRua"
+        ],
+        "numero": [
+            123
+        ],
+        "complemento": [
+            "Complemento 2"
+        ],
+        "bairro": "Barra"
+    },
+    "mae": "NomeMae",
+    "pai": "NomePai",
+    "naturalidade": "Americano",
+    "data_nascimento": "05/05/2001",
+    "num_habilitacao": "123456789",
+    "cat_habilitacao": "123456789",
+    "tipo": 1,
+    "contratos": []
+}
